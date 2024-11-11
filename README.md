@@ -19,7 +19,7 @@ CREATE DATABASE biblioteca;
 USE biblioteca;
 ```
 
-### 1.2 Criando a tabela 'editora'
+#### 1.2 Criando a tabela 'editora'
 ```
 CREATE TABLE editora(
     id_editora INT PRIMARY KEY AUTO_INCREMENT,
