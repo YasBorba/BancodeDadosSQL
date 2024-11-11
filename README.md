@@ -15,6 +15,15 @@ Este guia será dividido em etapas para demostrar desde a criação de tabelas, 
 #### 1.1 Criando o DB
 
 ```
-`CREATE DATABASE biblioteca;
+CREATE DATABASE biblioteca;
 USE biblioteca;
+```
+
+### 1.2 Criando a tabela 'editora'
+```
+CREATE TABLE editora(
+    id_editora INT PRIMARY KEY AUTO_INCREMENT,
+    nome_editora VARCHAR(100) NOT NULL,
+    pais VARCHAR(50)
+);
 ```
