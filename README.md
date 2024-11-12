@@ -116,6 +116,52 @@ VALUES
 ('Terror'),
 ('Romance');
 ```
+#### 4.4 Inserindo dados na tabela 'livro'
+```SQL
+INSERT INTO livro(titulo, ano_publicacao, editora, autor, assunto)
+VALUES
+('Capitães da Areia',1937,1,1,4),
+('Dom Casmurro',1899,2,2,4),
+('A Biblioteca da Meia-Noite',2020,3,3,2),
+('Memórias Póstumas de Brás Cubas',1881,1,2,4);
+```
+## Passo 5: atualizando os dados 'UPDATE'
+Podemos atualizar os dados com o comando UPDATE.
+Vamos corrigir a data de publicação do livro 'Capitães da Areia'
+```SQL
+UPDATE livro
+SET ano_publicado =1938
+WHERE titulo = 'Capitães da Areia';
+```
+
+## Passo 6: Excluindo os dados usando 'DELETE'
+Para remover os registros de uma tabela usamos o comando 'DELETE'.
+Vamos excluir o livro 'Memorias Postumas de Bras Cubas'
+
+```SQL
+DELETE FROM livro
+WHERE id_livro = 4;
+```
+
+## Passo 7: Consultando os dados usando 'SELECT'
+É possivel selecionar os dados para visualizar da forma como quiser.
+Para isso usamos o comando 'SELECT'
+#### 7.1 Selecionar todos os livros com suas editoras e autores 
+Vamos usar dados das tabelas 'livros', 'editora', 'autor' e 'assunto' usando o comando 'JOIN'
+```SQL
+SELECT livro.titulo AS nome,
+       editora.nome_editora AS editora,
+       autor.nome_autor AS autor,
+       assunto.descricao_assunto AS tema,
+       livro.ano_publicado AS ano
+FROM livro
+JOIN editora ON livro.editora = editora.id_editora
+JOIN autor ON livro.autor = autor.id_autor
+JOIN assunto ON livro.assunto = assunto.id_assunto;
+```
+
+
+
 
 
 
